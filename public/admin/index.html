@@ -6,18 +6,27 @@
     <title>Content Manager</title>
     <script>
       window.CMS_MANUAL_INIT = true;
-      window.CMS_CONFIG = { config: 'config.yml' };
+      // During debug we can switch config to `config.test2.yml` if present
+      window.CMS_CONFIG = { config: 'config.test2.yml' };
     </script>
   </head>
   <body>
     <div id="nc-root"></div>
     <script src="https://unpkg.com/decap-cms@3.6.3/dist/decap-cms.js" defer></script>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        if (window.CMS && typeof window.CMS.init === 'function') {
-          window.CMS.init();
+      (function initDecapCMS() {
+        function runInit() {
+          if (window.CMS && typeof window.CMS.init === 'function') {
+            window.CMS.init();
+          }
         }
-      });
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', runInit);
+        } else {
+          runInit();
+        }
+      })();
     </script>
   </body>
 </html>
