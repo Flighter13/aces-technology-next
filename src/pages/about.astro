@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ContentCard from '../components/ContentCard.astro';
+
+const teamMembers = await getCollection('team', ({ data }) => !data.featured);
+---
+
+<Layout title="About" description="About ACES Technology and its mission.">
+  <section class="page-shell">
+    <h1>About ACES Technology</h1>
+    <p>ACES Technology focuses on applied aerospace innovation that combines technical rigor, responsible operations, and engaging communication. The organization works across research, systems design, and strategic communications to support modern aviation initiatives.</p>
+    <div class="grid">
+      {teamMembers.map((member) => (
+        <ContentCard title={member.data.title} description={member.data.description} meta={member.data.role} />
+      ))}
+    </div>
+  </section>
+</Layout>

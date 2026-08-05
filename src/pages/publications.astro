@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ContentCard from '../components/ContentCard.astro';
+
+const entries = await getCollection('publications', ({ data }) => !data.draft);
+entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Publications" description="Reports and publications from ACES Technology.">
+  <section class="page-shell">
+    <h1>Publications</h1>
+    <p>Reports and summaries that capture lessons learned, technical findings, and program observations.</p>
+    <div class="grid">
+      {entries.map((entry) => (
+        <ContentCard
+          title={entry.data.title}
+          description={entry.data.description}
+          href={`/publications/${entry.id}`}
+          meta={`${entry.data.publisher ?? 'ACES Technology'} • ${entry.data.link ? 'External link' : 'Internal summary'}`}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

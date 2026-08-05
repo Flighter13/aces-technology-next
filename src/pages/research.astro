@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ContentCard from '../components/ContentCard.astro';
+
+const entries = await getCollection('research', ({ data }) => !data.draft);
+entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Research" description="Research projects and technical initiatives from ACES Technology.">
+  <section class="page-shell">
+    <h1>Research</h1>
+    <p>ACES Technology develops applied research programs that connect advanced sensing, autonomous operations, and resilient engineering practices.</p>
+    <div class="grid">
+      {entries.map((entry) => (
+        <ContentCard
+          title={entry.data.title}
+          description={entry.data.description}
+          href={`/research/${entry.id}`}
+          meta={`${entry.data.status} • ${entry.data.partner ?? 'ACES Technology'}`}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

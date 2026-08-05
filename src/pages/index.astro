@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ContentCard from '../components/ContentCard.astro';
+
+const research = (await getCollection('research', ({ data }) => !data.draft)).slice(0, 3);
+const news = (await getCollection('news', ({ data }) => !data.draft)).slice(0, 3);
+const profiles = (await getCollection('profiles', ({ data }) => !data.draft)).slice(0, 3);
+---
+
+<Layout title="ACES Technology" description="ACES Technology develops applied aerospace and autonomy solutions with a focus on research, systems thinking, and accessible communication.">
+  <main class="page-shell">
+    <section class="hero">
+      <div>
+        <p class="summary">Applied aerospace innovation and responsible technology development</p>
+        <h1>ACES Technology is shaping practical, transparent solutions for modern aviation.</h1>
+        <p>From research programs to technology profiles and program updates, this site brings together the people, work, and thinking behind ACES Technology in a cleaner, more maintainable format.</p>
+      </div>
+      <div class="hero-card">
+        <h2>What’s featured</h2>
+        <ul>
+          <li>Research initiatives and project outcomes</li>
+          <li>Aircraft and technology profiles</li>
+          <li>Publications, presentations, and news updates</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research highlights</h2>
+      <div class="grid">
+        {research.map((entry) => (
+          <ContentCard title={entry.data.title} description={entry.data.description} href={`/research/${entry.id}`} meta={entry.data.status} />
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>Recent news</h2>
+      <div class="grid">
+        {news.map((entry) => (
+          <ContentCard title={entry.data.title} description={entry.data.description} href={`/news/${entry.id}`} meta={entry.data.category} />
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>Technology profiles</h2>
+      <div class="grid">
+        {profiles.map((entry) => (
+          <ContentCard title={entry.data.title} description={entry.data.description} href={`/profiles/${entry.id}`} meta={entry.data.category} />
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,38 @@
+---
+const { title, description, href, meta } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const resolvedHref = href && href.startsWith('/') ? `${base}${href.replace(/^\/+/, '')}` : href;
+---
+
+<article class="card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  {meta && <p class="meta">{meta}</p>}
+  {resolvedHref && <a href={resolvedHref}>Read more</a>}
+</article>
+
+<style>
+  .card {
+    border: 1px solid #d9e2ec;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    box-shadow: 0 8px 24px rgba(16, 58, 99, 0.06);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: #103a63;
+  }
+
+  .meta {
+    color: #5d6d7e;
+    font-size: 0.95rem;
+  }
+
+  .card a {
+    color: #0f6bbf;
+    font-weight: 600;
+    text-decoration: none;
+  }
+</style>
