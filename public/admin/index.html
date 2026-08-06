@@ -4,55 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
   </head>
   <body>
     <div id="nc-root"></div>
     <script src="https://unpkg.com/decap-cms@3.6.3/dist/decap-cms.js"></script>
-    <script>
-      window.CMS_MANUAL_INIT = true;
-      window.CMS_CONFIG = {
-        backend: {
-          name: 'github',
-          repo: 'Flighter13/aces-technology-next',
-          branch: 'migration/astro-cms',
-          base_url: 'https://api.github.com',
-          auth_endpoint: '/auth',
-        },
-        site_url: 'https://flighter13.github.io/aces-technology-next/',
-        media_folder: 'public/images',
-        public_folder: '/images',
-        publish_mode: 'editorial_workflow',
-        collections: [
-          {
-            name: 'posts',
-            label: 'Posts',
-            folder: 'src/content/news',
-            create: true,
-            slug: '{{slug}}',
-            fields: [
-              { label: 'Title', name: 'title', widget: 'string', required: true },
-              { label: 'Description', name: 'description', widget: 'text', required: true },
-              { label: 'Date', name: 'date', widget: 'datetime', required: true },
-              { label: 'Body', name: 'body', widget: 'markdown' },
-            ],
-          },
-        ],
-      };
-
-      const initCms = () => {
-        if (window.CMS && typeof window.CMS.init === 'function') {
-          window.CMS.init({ config: window.CMS_CONFIG });
-        }
-      };
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCms, { once: true });
-      } else {
-        initCms();
-      }
-    </script>
   </body>
 </html>

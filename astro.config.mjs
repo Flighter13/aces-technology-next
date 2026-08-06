@@ -2,6 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://jdp4v.github.io',
+  site: 'https://flighter13.github.io',
   base: '/aces-technology-next/',
 });
