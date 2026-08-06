@@ -2,6 +2,7 @@ backend:
   name: github
   repo: Flighter13/aces-technology-next
   branch: migration/astro-cms
+  site_domain: YOUR-NETLIFY-SITE.netlify.app
 
 site_url: https://flighter13.github.io/aces-technology-next/
 media_folder: public/images
