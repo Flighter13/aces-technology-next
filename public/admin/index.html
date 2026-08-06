@@ -6,27 +6,53 @@
     <title>Content Manager</title>
     <script>
       window.CMS_MANUAL_INIT = true;
-      // During debug we can switch config to `config.test2.yml` if present
-      window.CMS_CONFIG = { config: 'config.test2.yml' };
     </script>
   </head>
   <body>
     <div id="nc-root"></div>
-    <script src="https://unpkg.com/decap-cms@3.5.1/dist/decap-cms.js" defer></script>
+    <script src="https://unpkg.com/decap-cms@3.6.3/dist/decap-cms.js"></script>
     <script>
-      (function initDecapCMS() {
-        function runInit() {
-          if (window.CMS && typeof window.CMS.init === 'function') {
-            window.CMS.init();
-          }
-        }
+      window.CMS_MANUAL_INIT = true;
+      window.CMS_CONFIG = {
+        backend: {
+          name: 'github',
+          repo: 'jdp4v/aces-technology-next',
+          branch: 'main',
+          base_url: 'https://api.github.com',
+          auth_endpoint: '/auth',
+        },
+        site_url: 'https://jdp4v.github.io/aces-technology-next/',
+        media_folder: 'public/images',
+        public_folder: '/images',
+        publish_mode: 'editorial_workflow',
+        collections: [
+          {
+            name: 'posts',
+            label: 'Posts',
+            folder: 'src/content/news',
+            create: true,
+            slug: '{{slug}}',
+            fields: [
+              { label: 'Title', name: 'title', widget: 'string', required: true },
+              { label: 'Description', name: 'description', widget: 'text', required: true },
+              { label: 'Date', name: 'date', widget: 'datetime', required: true },
+              { label: 'Body', name: 'body', widget: 'markdown' },
+            ],
+          },
+        ],
+      };
 
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', runInit);
-        } else {
-          runInit();
+      const initCms = () => {
+        if (window.CMS && typeof window.CMS.init === 'function') {
+          window.CMS.init({ config: window.CMS_CONFIG });
         }
-      })();
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCms, { once: true });
+      } else {
+        initCms();
+      }
     </script>
   </body>
 </html>

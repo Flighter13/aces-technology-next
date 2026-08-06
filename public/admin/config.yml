@@ -8,80 +8,11 @@ backend:
 site_url: https://jdp4v.github.io/aces-technology-next/
 media_folder: public/images
 public_folder: /images
-
 publish_mode: editorial_workflow
 
 collections:
-  - name: research
-    label: Research Projects
-    folder: src/content/research
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Title, name: title, widget: string, required: true }
-      - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
-      - { label: Status, name: status, widget: select, options: [Planning, Active, Completed], default: Active }
-      - { label: Partner, name: partner, widget: string }
-      - { label: Featured, name: featured, widget: boolean, default: false }
-      - { label: Draft, name: draft, widget: boolean, default: true }
-      - { label: Tags, name: tags, widget: list }
-      - { label: Image, name: image, widget: image }
-      - { label: Body, name: body, widget: markdown }
-
-  - name: profiles
-    label: Aircraft and Technology Profiles
-    folder: src/content/profiles
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Title, name: title, widget: string, required: true }
-      - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
-      - { label: Category, name: category, widget: select, options: [Aircraft, Technology], default: Technology }
-      - { label: Platform, name: platform, widget: string }
-      - { label: Featured, name: featured, widget: boolean, default: false }
-      - { label: Draft, name: draft, widget: boolean, default: true }
-      - { label: Tags, name: tags, widget: list }
-      - { label: Image, name: image, widget: image }
-      - { label: Body, name: body, widget: markdown }
-
-  - name: publications
-    label: Publications and Reports
-    folder: src/content/publications
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Title, name: title, widget: string, required: true }
-      - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
-      - { label: Publisher, name: publisher, widget: string }
-      - { label: Link, name: link, widget: string }
-      - { label: Featured, name: featured, widget: boolean, default: false }
-      - { label: Draft, name: draft, widget: boolean, default: true }
-      - { label: Tags, name: tags, widget: list }
-      - { label: Image, name: image, widget: image }
-      - { label: Body, name: body, widget: markdown }
-
-  - name: presentations
-    label: Presentations
-    folder: src/content/presentations
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Title, name: title, widget: string, required: true }
-      - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
-      - { label: Venue, name: venue, widget: string }
-      - { label: Link, name: link, widget: string }
-      - { label: Featured, name: featured, widget: boolean, default: false }
-      - { label: Draft, name: draft, widget: boolean, default: true }
-      - { label: Tags, name: tags, widget: list }
-      - { label: Image, name: image, widget: image }
-      - { label: Body, name: body, widget: markdown }
-
-  - name: news
-    label: News and Updates
+  - name: posts
+    label: Posts
     folder: src/content/news
     create: true
     slug: "{{slug}}"
@@ -89,23 +20,4 @@ collections:
       - { label: Title, name: title, widget: string, required: true }
       - { label: Description, name: description, widget: text, required: true }
       - { label: Date, name: date, widget: datetime, required: true }
-      - { label: Category, name: category, widget: select, options: [Project Update, News, Milestone], default: Project Update }
-      - { label: Featured, name: featured, widget: boolean, default: false }
-      - { label: Draft, name: draft, widget: boolean, default: true }
-      - { label: Tags, name: tags, widget: list }
-      - { label: Image, name: image, widget: image }
-      - { label: Body, name: body, widget: markdown }
-
-  - name: team
-    label: Team and About
-    folder: src/content/team
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Title, name: title, widget: string, required: true }
-      - { label: Description, name: description, widget: text, required: true }
-      - { label: Role, name: role, widget: string }
-      - { label: Email, name: email, widget: string }
-      - { label: Featured, name: featured, widget: boolean, default: false }
-      - { label: Image, name: image, widget: image }
       - { label: Body, name: body, widget: markdown }
