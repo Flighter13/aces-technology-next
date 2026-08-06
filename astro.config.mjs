@@ -2,6 +2,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://flighter13.github.io',
-  base: '/aces-technology-next/',
+  site: 'https://YOUR-NETLIFY-SITE.netlify.app',
 });

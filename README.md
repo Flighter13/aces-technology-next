@@ -8,7 +8,7 @@ This repository contains the Astro-based rebuild of the ACES Technology website.
 - Reusable components for shared navigation and content cards
 - Markdown-based content collections for structured editorial content
 - Decap CMS configuration for creating and editing content through the admin experience
-- GitHub Pages deployment workflow for automated publishing
+- Netlify deployment configuration for automated publishing
 
 ## Project structure
 
@@ -61,7 +61,22 @@ Content is stored as Markdown files in the content collections under [src/conten
 
 ## Deployment
 
-The site is configured for GitHub Pages deployment through [.github/workflows/deploy.yml](.github/workflows/deploy.yml). The Astro base path is set for the repository project URL so assets and links resolve correctly on GitHub Pages.
+The site is configured for Netlify deployment using [netlify.toml](netlify.toml):
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Node version: `22`
+
+Connect the `migration/astro-cms` branch to Netlify and enable automatic deploys on push.
+
+### Decap CMS OAuth
+
+Decap CMS uses the GitHub backend and Netlify auth broker. Set these values in [public/admin/config.yml](public/admin/config.yml):
+
+- `backend.repo`: `Flighter13/aces-technology-next`
+- `backend.branch`: `migration/astro-cms`
+- `backend.site_domain`: your Netlify site domain
+- `site_url`: your Netlify production URL
 
 ## Notes
 

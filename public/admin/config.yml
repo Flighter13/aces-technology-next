@@ -4,7 +4,7 @@ backend:
   branch: migration/astro-cms
   site_domain: YOUR-NETLIFY-SITE.netlify.app
 
-site_url: https://flighter13.github.io/aces-technology-next/
+site_url: https://YOUR-NETLIFY-SITE.netlify.app/
 media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow

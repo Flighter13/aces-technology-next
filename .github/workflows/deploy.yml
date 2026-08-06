@@ -1,8 +1,6 @@
-name: Deploy Astro site to GitHub Pages
+name: Deploy Astro site to GitHub Pages (manual fallback)
 
 on:
-  push:
-    branches: [migration/astro-cms]
   workflow_dispatch:
 
 permissions:
