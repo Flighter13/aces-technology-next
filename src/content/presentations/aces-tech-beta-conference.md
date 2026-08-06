@@ -16,45 +16,48 @@ image: /images/hero-aces.svg
 
 ### 1. Welcome and Introduction
 
-- The evolution of combat aircraft technologies and their importance in modern defense.
-- Overview of conference sessions and expectations.
+The evolution of combat aircraft technologies remains central to modern defense strategy. This conference focuses on embedded systems, modular design principles, and cost-efficient production approaches for next-generation platforms.
 
 ### 2. Session 1: Embedded Systems in Modern Combat Aircraft
 
-- Overview of embedded systems and their role in data processing and sensor integration.
-- F-35 Integrated Core Processor (ICP): the aircraft’s central nervous system.
-- Fault tolerance, redundancy, and safety in real-time processing.
-- UAV autonomy and sensor fusion: cameras, LiDAR, and radar.
-- Algorithmic solutions for noise, latency, and environmental challenges.
+Embedded systems are the operational core of modern combat aircraft. This session examines their role in real-time processing, sensor integration, and onboard decision support.
+
+- F-35 Integrated Core Processor (ICP) as the aircraft's central processing backbone
+- Fault tolerance, redundancy, and operational safety in real-time architectures
+- UAV autonomy through sensor fusion, including camera, LiDAR, and radar workflows
+- Engineering approaches for sensor noise, latency, and harsh operating environments
 
 ### 3. Session 2: Modularity in Combat Aircraft Design
 
-- Defining modularity and its advantages in flexibility and adaptability.
-- Cost-saving implications of modular aircraft design.
-- Examples from the F-35: modular weapons systems, avionics, and mission-specific components.
-- Prospective modular technologies for future air platforms.
-- Challenges of standardized modules across models.
+Modularity supports faster upgrades, mission adaptability, and lower lifecycle cost.
+
+- Flexibility and maintainability benefits of modular architecture
+- Cost-saving implications for production and sustainment
+- F-35 examples: modular avionics, weapons interfaces, and mission components
+- Prospective modular technologies for future air platforms
+- Standardization challenges across mixed fleets and mission sets
 
 ### 4. Session 3: Low-Cost Production Strategies
 
-- Cost pressures and economical production methods in defense.
-- Advanced manufacturing techniques such as 3D printing and automation.
-- Lessons from the F-35 program for cost efficiency at scale.
-- Automation and digital twins in production planning and quality control.
-- Balancing cost reduction with performance requirements.
+Defense programs face persistent cost pressure, requiring high-impact production innovation.
+
+- Advanced manufacturing approaches, including additive manufacturing and automation
+- Lessons from F-35 production scaling and process optimization
+- Use of digital twins for planning, integration testing, and quality control
+- Methods for balancing affordability with operational performance
 
 ### 5. Session 4: Case Studies and Applications
 
-- Real-world embedded system applications in F-35 and UAV operations.
-- Interactive panel on lessons from the field.
-- Discussion of challenges and future trends in embedded systems and modularity.
+Case studies connect the technical material to fielded systems and operational constraints.
+
+- Embedded system applications in F-35 and UAV operations
+- Interactive panel with field lessons from operators and engineers
+- Discussion of near-term trends in modularity and integrated avionics
 
 ### 6. Keynote Presentation: The Future of Combat Aircraft Technology
 
-- Visionary insights on autonomy, adaptability, and cost-effectiveness.
-- Emphasis on next-generation aerial warfare trends.
+A forward-looking keynote highlights trends in autonomy, adaptability, and cost-effectiveness, with emphasis on how these capabilities reshape future aerial warfare.
 
 ### 7. Closing Remarks and Future Directions
 
-- Summary of conference outcomes.
-- Next steps for continuing research and collaboration.
+The conference concludes with key takeaways and next steps for research collaboration focused on embedded systems, modular design, and economical production strategies.
