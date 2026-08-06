@@ -1,11 +1,11 @@
 backend:
   name: github
-  repo: jdp4v/aces-technology-next
-  branch: main
+  repo: Flighter13/aces-technology-next
+  branch: migration/astro-cms
   base_url: https://api.github.com
   auth_endpoint: /auth
 
-site_url: https://jdp4v.github.io/aces-technology-next/
+site_url: https://flighter13.github.io/aces-technology-next/
 media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
