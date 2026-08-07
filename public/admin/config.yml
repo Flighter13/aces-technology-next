@@ -18,7 +18,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string, required: true }
       - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
+      - { label: Date, name: date, widget: date, required: true }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured, name: featured, widget: boolean, default: false }
@@ -36,7 +36,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string, required: true }
       - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
+      - { label: Date, name: date, widget: date, required: true }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured, name: featured, widget: boolean, default: false }
@@ -54,7 +54,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string, required: true }
       - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
+      - { label: Date, name: date, widget: date, required: true }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured, name: featured, widget: boolean, default: false }
@@ -72,7 +72,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string, required: true }
       - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
+      - { label: Date, name: date, widget: date, required: true }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured, name: featured, widget: boolean, default: false }
@@ -90,7 +90,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string, required: true }
       - { label: Description, name: description, widget: text, required: true }
-      - { label: Date, name: date, widget: datetime, required: true }
+      - { label: Date, name: date, widget: date, required: true }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured, name: featured, widget: boolean, default: false }
