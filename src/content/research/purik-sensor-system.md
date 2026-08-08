@@ -8,7 +8,7 @@ tags:
   - sensors
   - modularity
   - prototyping
-draft: true
+draft: false
 featured: true
 image: /images/purik-header-bg.jpg
 status: Active
