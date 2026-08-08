@@ -1,16 +1,18 @@
 ---
 title: Purik Sensor System
-description: An open-architecture, modular multi-sensor demonstrator for embedded aviation systems education and prototyping.
+description: An open-architecture, modular multi-sensor demonstrator for
+  embedded aviation systems education and prototyping.
 date: 2025-01-15
-status: Active
-partner: ACES Technology
-featured: true
 tags:
   - embedded-systems
   - sensors
   - modularity
   - prototyping
-image: /images/hero-aces.svg
+draft: false
+featured: true
+image: /images/purik-header-bg.jpg
+status: Active
+partner: ACES Technology
 ---
 
 ## Purik Sensor System: Design, Development, and Demonstration
