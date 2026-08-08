@@ -1,10 +1,12 @@
 ---
-const { title, description, href, meta } = Astro.props;
+const { title, description, href, meta, image } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const resolvedHref = href && href.startsWith('/') ? `${base}${href.replace(/^\/+/, '')}` : href;
+const resolvedImage = image && image.startsWith('/') ? `${base}${image.replace(/^\/+/, '')}` : image;
 ---
 
 <article class="card">
+  {resolvedImage && <img class="card-image" src={resolvedImage} alt={`${title} cover image`} loading="lazy" />}
   <h3>{title}</h3>
   <p>{description}</p>
   {meta && <p class="meta">{meta}</p>}
@@ -18,6 +20,14 @@ const resolvedHref = href && href.startsWith('/') ? `${base}${href.replace(/^\/+
     padding: 1rem 1.25rem;
     background: white;
     box-shadow: 0 8px 24px rgba(16, 58, 99, 0.06);
+  }
+
+  .card-image {
+    width: calc(100% + 2.5rem);
+    margin: -1rem -1.25rem 0.75rem;
+    border-radius: 0.75rem 0.75rem 0 0;
+    object-fit: cover;
+    max-height: 200px;
   }
 
   .card h3 {

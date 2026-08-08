@@ -16,6 +16,7 @@ entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
         <ContentCard
           title={entry.data.title}
           description={entry.data.description}
+          image={entry.data.image}
           href={`/presentations/${entry.id}`}
           meta={`${entry.data.venue ?? 'Conference'} • ${entry.data.link ? 'Slide link available' : 'Summary available'}`}
         />

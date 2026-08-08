@@ -30,7 +30,7 @@ const profiles = (await getCollection('profiles', ({ data }) => !data.draft)).sl
       <h2>Research highlights</h2>
       <div class="grid">
         {research.map((entry) => (
-          <ContentCard title={entry.data.title} description={entry.data.description} href={`/research/${entry.id}`} meta={entry.data.status} />
+          <ContentCard title={entry.data.title} description={entry.data.description} href={`/research/${entry.id}`} meta={entry.data.status} image={entry.data.image} />
         ))}
       </div>
     </section>
@@ -39,7 +39,7 @@ const profiles = (await getCollection('profiles', ({ data }) => !data.draft)).sl
       <h2>Recent news</h2>
       <div class="grid">
         {news.map((entry) => (
-          <ContentCard title={entry.data.title} description={entry.data.description} href={`/news/${entry.id}`} meta={entry.data.category} />
+          <ContentCard title={entry.data.title} description={entry.data.description} href={`/news/${entry.id}`} meta={entry.data.category} image={entry.data.image} />
         ))}
       </div>
     </section>
@@ -48,7 +48,7 @@ const profiles = (await getCollection('profiles', ({ data }) => !data.draft)).sl
       <h2>Technology profiles</h2>
       <div class="grid">
         {profiles.map((entry) => (
-          <ContentCard title={entry.data.title} description={entry.data.description} href={`/profiles/${entry.id}`} meta={entry.data.category} />
+          <ContentCard title={entry.data.title} description={entry.data.description} href={`/profiles/${entry.id}`} meta={entry.data.category} image={entry.data.image} />
         ))}
       </div>
     </section>
