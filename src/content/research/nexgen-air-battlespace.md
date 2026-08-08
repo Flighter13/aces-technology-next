@@ -8,7 +8,7 @@ tags:
   - visualization
   - aircraft
   - autonomy
-draft: true
+draft: false
 featured: true
 image: /images/nexgen-header-bg.jpg
 status: Active
