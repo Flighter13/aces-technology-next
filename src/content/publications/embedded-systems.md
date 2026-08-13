@@ -1,12 +1,10 @@
 ---
 title: Embedded Systems
-description: Overview of embedded systems in combat aircraft, including key case studies.
+description: Case Studies in Embedded Systems Design for Combat Aircraft
 draft: false
 featured: false
 ---
-Case Studies in Embedded Systems Design for Combat Aircraft
 
-Here are some fascinating case studies to delve into:
 
 1. F-35 Lightning II Integrated Core Processor (ICP)
 
