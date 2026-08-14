@@ -18,8 +18,7 @@ Part I: Case Studies in Advanced Tactical  Avionics
    Integrating disparate data streams requires high-throughput data buses (such as Fibre Channel and PCI Express) paired with hardware-accelerated processing fabrics (FPGAs and GPUs).
 
 * Spatial and Temporal Alignment: Raw radar plots, passive RF emitter coordinates, and high-resolution infrared imagery arrive at varying refresh rates, latency profiles, and spatial coordinate frames.
-* State Estimation: The ICP utilizes advanced mathematical estimation techniques, primarily Extended Kalman Filters (EKF) and Unscented Kalman Filters (UKF), to correlate raw observations into a single, high-confidence track file:
-  Where \mathbf{x}_k represents the state vector of an airborne target (position, velocity, acceleration), \mathbf{z}_k represents multi-sensor measurements, and \mathbf{w}_k, \mathbf{v}_k denote process and measurement noise covariance matrices.
+* State Estimation: The ICP utilizes advanced mathematical estimation techniques, primarily Extended Kalman Filters (EKF) and Unscented Kalman Filters (UKF), to correlate raw observations into a single, high-confidence track file.
   Real-Time Compute Challenges
   Operating in high-speed, high-stress combat regimes requires deterministic latency guarantees. The ICP relies on safety-critical Real-Time Operating Systems (RTOS) certified to DO-178C Level A standards (such as Green Hills Software's INTEGRITY-178). Key challenges include:
 * Resource Contention: Preventing high-priority tasks (e.g., flight control, missile warning) from suffering thread starvation due to heavy sensor data streams.
@@ -33,12 +32,9 @@ Part I: Case Studies in Advanced Tactical  Avionics
    Architectural Overview
    Unmanned Aerial Vehicles (UAVs) operating in denied or GPS-degraded environments must maintain continuous situational awareness without human intervention. This requires multi-modal sensor fusion across optical cameras, LiDAR, millimetric radar, and Inertial Measurement Units (IMUs).
    Multi-Modal Perception Framework
-   To construct a spatial 3D model of its surroundings, a tactical UAV combines active and passive sensing modalities:
-   | Sensor Type | Strengths | Weaknesses | Fusion Strategy |
-   |---|---|---|---|
-   | Cameras (EO/IR) | High resolution, semantic classification | Sensitive to lighting/weather, no direct range data | Feature extraction combined with depth maps |
-   | LiDAR | High-precision 3D point clouds, direct range | High power draw, reduced range in severe precipitation | Fused with IMU/Visual Odometry for local SLAM |
-   | MMW Radar | All-weather, long range, velocity measurement | Lower spatial resolution, multipath clutter | Far-field object detection and tracking |
+   To construct a spatial 3D model of its surroundings, a tactical UAV combines active and passive sensing modalities.
+
+
    Autonomous Decision-Making Algorithms
    Autonomous tactical flight relies on a layered computational stack:
 
@@ -71,17 +67,7 @@ Part I: Case Studies in Advanced Tactical  Avionics
 * Objective: Implement a modular hardware-in-the-loop sensor fusion pipeline that ingests data from disparate low-cost sensors (e.g., optical camera, ultrasonic, LiDAR, IR) to produce target state estimation.
 * Core Technologies: STM32H7 / NVIDIA Jetson Orin, C++, OpenCV, Eigen Library, Robot Operating System (ROS 2).
 * Algorithmic Focus: Implementation of an Extended Kalman Filter (EKF) or Unscented Kalman Filter (UKF) running in a real-time thread to track a maneuvering ground target.
-      +---------------+
-      | Camera Stream | ------+
-      +---------------+       |
-                              v
-      +---------------+   +------------------+   +-------------------+
-      | LiDAR / Range | ->| Spatial Alignment| ->| EKF State Engine  |
-      +---------------+   +------------------+   | (Kinematic Model) |
-                              ^                  +-------------------+
-      +---------------+       |                            |
-      |  IMU / Gyro   | ------+                            v
-      +---------------+                  \[ High-Confidence Track ]
+    
 
 Project 2: High-Throughput Deterministic RTOS Pipeline
 
@@ -92,14 +78,14 @@ Project 2: High-Throughput Deterministic RTOS Pipeline
 * Objective: Design an onboard diagnostic subsystem for flight actuator or sensor failures that detects anomalies, isolates degraded components, and shifts control logic without system disruption.
 * Core Technologies: MATLAB/Simulink (Embedded Coder), C++, target microcontroller.
 * Algorithmic Focus: Residual generator design using parity space methods or Extended Luenberger Observers:
-  A fault flag triggers when the residual magnitude exceed predefined dynamic statistical thresholds (\Vert{}\mathbf{r}(k)\Vert{} > \tau), driving an automated fallback state machine.
+  A fault flag triggers when the residual magnitude exceed predefined dynamic statistical thresholds, driving an automated fallback state machine.
   Project 4: Hardware-Rooted Embedded Cybersecurity Platform
 * Objective: Implement secure boot, encrypted firmware-over-the-air (FOTA) updates, and run-time memory protection for an airborne control unit.
 * Core Technologies: ARM TrustZone, TPM 2.0 (Trusted Platform Module), Hardware Security Modules (HSM), AES-256-GCM, RSA-4096 / ECC.
 * Algorithmic Focus: Memory Protection Unit (MPU) configuration to enforce strictly separated spatial partitions, combined with cryptographic signature verification of application binaries prior to execution.
   Project 5: Edge Machine Learning Signal Classifier
-* Objective: Deploy a low-power, lightweight neural network onto an edge device to classify incoming complex RF waveforms or optical targets under extreme power constraints (<10\text{W}).
+* Objective: Deploy a low-power, lightweight neural network onto an edge device to classify incoming complex RF waveforms or optical targets under extreme power constraints.
 * Core Technologies: TensorFlow Lite for Microcontrollers, ONNX Runtime, ARM Ethos NPU or Xilinx Zynq UltraScale+ MPSOC.
-* Algorithmic Focus: Post-training 8-bit integer quantization (\text{INT8}) and network pruning of dynamic Convolutional Neural Networks (CNNs) to optimize latency and SWaP footprint without sacrificing classification accuracy.
+* Algorithmic Focus: Post-training 8-bit integer quantization and network pruning of dynamic Convolutional Neural Networks (CNNs) to optimize latency and SWaP footprint without sacrificing classification accuracy.
   Conclusion
   The evolution of combat aircraft technologies is driven by embedded computing architectures. Mastering the interplay between heterogeneous hardware, deterministic operating systems, and mathematical fusion algorithms is essential for designing next-generation defense systems. By translating these theoretical concepts into concrete embedded designs, systems architects can advance the frontiers of autonomous capability, cognitive electronic defense, and real-time avionics integration.
