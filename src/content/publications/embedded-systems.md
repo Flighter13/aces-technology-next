@@ -2,7 +2,7 @@
 title: Embedded Systems
 description: Case Studies in Embedded Systems Design for Combat Aircraft
 draft: false
-featured: false
+featured: true
 ---
 Architectures of Modern Avionics: Sensor Fusion, Real-Time Compute, and Embedded Systems in Next-Generation Combat Aircraft
 Executive Summary
