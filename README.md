@@ -1,83 +1,44 @@
-# ACES Technology website
+# ACES Technology
 
-This repository contains the Astro-based rebuild of the ACES Technology website. The site was migrated from a static HTML/CSS/JavaScript structure into a more maintainable content-driven architecture using Astro, Markdown content collections, reusable components, and Decap CMS.
-
-## What was created
-
-- A responsive homepage and section pages for research, profiles, publications, presentations, news, and about
-- Reusable components for shared navigation and content cards
-- Markdown-based content collections for structured editorial content
-- Decap CMS configuration for creating and editing content through the admin experience
-- Netlify deployment configuration for automated publishing
-
-## Project structure
-
-```text
-/
-├── public/
-│   ├── admin/
-│   ├── images/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   ├── pages/
-│   └── styles/
-├── .github/workflows/
-├── package.json
-└── MIGRATION.md
-```
+Astro-based research portfolio for ACES Technology. Content is stored directly in Markdown—there is no CMS, admin route, or external database.
 
 ## Local development
 
-Install dependencies:
+Requires Node.js 22 or later.
 
-```sh
+```bash
 npm install
-```
-
-Start the development server:
-
-```sh
 npm run dev
 ```
 
-Build for production:
+Open the local URL Astro prints in the terminal. Before publishing, run:
 
-```sh
+```bash
 npm run build
 ```
 
-Run Astro diagnostics:
+## Add a project
 
-```sh
-npm run check
-```
+1. Duplicate `src/content/projects/purik-sensor-system.md`.
+2. Rename the copy using a short URL-friendly name.
+3. Update its frontmatter and Markdown content.
+4. Commit and push. Astro automatically creates the listing card and project page.
 
-## Content workflow
+Required frontmatter fields are validated in `src/content.config.ts`.
 
-Content is stored as Markdown files in the content collections under [src/content](src/content). You can add or edit entries manually there, or use the Decap CMS admin at /admin/ once the site is running locally.
+## Edit site copy
 
-## Deployment
+- Home: `src/pages/index.astro`
+- Research: `src/pages/research.astro`
+- About: `src/pages/about.astro`
+- Contact: `src/pages/contact.astro`
+- Navigation: `src/components/Header.astro`
+- Styling: `src/styles/global.css`
 
-The site is configured for Netlify deployment using [netlify.toml](netlify.toml):
+## Deploy to Netlify
 
-- Build command: `npm run build`
-- Publish directory: `dist`
-- Node version: `22`
+Import this repository in Netlify. The included `netlify.toml` sets the build command and output directory. Update the `site` value in `astro.config.mjs` when the production domain is known.
 
-Connect the `migration/astro-cms` branch to Netlify and enable automatic deploys on push.
+## Security
 
-### Decap CMS OAuth
-
-Decap CMS uses the GitHub backend and Netlify auth broker. Set these values in [public/admin/config.yml](public/admin/config.yml):
-
-- `backend.repo`: `Flighter13/aces-technology-next`
-- `backend.branch`: `migration/astro-cms`
-- `backend.site_domain`: your Netlify site domain
-- `site_url`: your Netlify production URL
-
-## Notes
-
-See [MIGRATION.md](MIGRATION.md) for the full migration overview, local workflow details, CMS instructions, and remaining setup steps.
+Never commit Wi-Fi credentials, API keys, private contact information, or hardware secret files. `.env` files are ignored by Git.

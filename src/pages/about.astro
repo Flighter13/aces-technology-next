@@ -1,19 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import ContentCard from '../components/ContentCard.astro';
-
-const teamMembers = await getCollection('team', ({ data }) => !data.featured);
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
-<Layout title="About" description="About ACES Technology and its mission.">
-  <section class="page-shell">
-    <h1>About ACES Technology</h1>
-    <p>ACES Technology focuses on applied aerospace innovation that combines technical rigor, responsible operations, and engaging communication. The organization works across research, systems design, and strategic communications to support modern aviation initiatives.</p>
-    <div class="grid">
-      {teamMembers.map((member) => (
-        <ContentCard title={member.data.title} description={member.data.description} meta={member.data.role} />
-      ))}
-    </div>
+<BaseLayout title="About — ACES Technology" description="About Joshua Parr and ACES Technology.">
+  <section class="page-intro"><p class="eyebrow">About</p><h1>Independent research, grounded in hands-on engineering.</h1></section>
+  <section class="two-column">
+    <div class="prose"><h2>Joshua Parr</h2><p>Joshua is an electrical engineering student and independent researcher focused on embedded systems, combat-aircraft technology, modular open architectures, and autonomy.</p><p>ACES Technology is the working identity for that research: a place to document prototypes, publish technical analysis, and make the engineering process visible to collaborators in academia, government, and industry.</p></div>
+    <aside class="fact-panel"><p class="eyebrow">Focus</p><ul><li>Electrical engineering</li><li>Embedded hardware and software</li><li>Modular sensor integration</li><li>Aerospace and defense systems</li><li>Human-machine teaming</li></ul></aside>
   </section>
-</Layout>
+</BaseLayout>

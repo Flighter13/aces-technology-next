@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const projects = (await getCollection('projects')).sort((a,b) => a.data.order-b.data.order);
+---
+<BaseLayout title="Projects — ACES Technology" description="Embedded systems and modular sensing projects by ACES Technology.">
+  <section class="page-intro"><p class="eyebrow">Selected work</p><h1>Engineering projects</h1><p class="lede">Prototype programs documented from problem definition through architecture, implementation, and results.</p></section>
+  <section class="project-list">
+    {projects.map(({ id, data }, index) => <a href={`/projects/${id}/`} class="project-row"><span class="index">{String(index+1).padStart(2,'0')}</span><div><p class="meta">{data.status} · {data.year}</p><h2>{data.title}</h2><p>{data.summary}</p><ul>{data.disciplines.map(d => <li>{d}</li>)}</ul></div><span class="arrow">↗</span></a>)}
+  </section>
+</BaseLayout>
