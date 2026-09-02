@@ -1,0 +1,18 @@
+---
+const current = Astro.url.pathname;
+const links = [
+  ['Work', '/projects/'],
+  ['Research', '/research/'],
+  ['About', '/about/'],
+  ['Contact', '/contact/'],
+];
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="ACES Technology home">
+    <span class="brand-mark" aria-hidden="true">A</span>
+    <span><strong>ACES</strong><small>Technology</small></span>
+  </a>
+  <nav aria-label="Primary navigation">
+    {links.map(([label, href]) => <a class:list={{ active: current.startsWith(href) }} href={href}>{label}</a>)}
+  </nav>
+</header>

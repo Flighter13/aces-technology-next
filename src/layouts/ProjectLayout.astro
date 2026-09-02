@@ -1,0 +1,22 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { title, summary, status, year, disciplines } = Astro.props;
+---
+<BaseLayout title={`${title} — ACES Technology`} description={summary}>
+  <article class="project-detail">
+    <a class="eyebrow back" href="/projects/">← Selected work</a>
+    <header class="project-hero">
+      <div>
+        <p class="eyebrow">{status} · {year}</p>
+        <h1>{title}</h1>
+        <p class="lede">{summary}</p>
+      </div>
+      <div class="signal-card" aria-label="Project disciplines">
+        <span class="pulse"></span>
+        <p>Research domains</p>
+        <ul>{disciplines.map((item: string) => <li>{item}</li>)}</ul>
+      </div>
+    </header>
+    <div class="prose"><slot /></div>
+  </article>
+</BaseLayout>

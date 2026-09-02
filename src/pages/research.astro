@@ -1,26 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import ContentCard from '../components/ContentCard.astro';
-
-const entries = await getCollection('research', ({ data }) => !data.draft);
-entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+import BaseLayout from '../layouts/BaseLayout.astro';
+const areas = [
+  ['01','Modular open systems','Interfaces and architectures that allow components to change without redesigning the whole system.'],
+  ['02','Embedded sensing','Practical integration of radar, LiDAR, positioning, environmental, and proximity sensors.'],
+  ['03','Autonomy testbeds','Accessible platforms for experimenting with human-machine teaming and autonomous control.'],
+  ['04','Aerospace systems analysis','Technical studies connecting program strategy, production, survivability, and mission systems.'],
+];
 ---
-
-<Layout title="Research" description="Research projects and technical initiatives from ACES Technology.">
-  <section class="page-shell">
-    <h1>Research</h1>
-    <p>ACES Technology develops applied research programs that connect advanced sensing, autonomous operations, and resilient engineering practices.</p>
-    <div class="grid">
-      {entries.map((entry) => (
-        <ContentCard
-          title={entry.data.title}
-          description={entry.data.description}
-          image={entry.data.image}
-          href={`/research/${entry.id}`}
-          meta={`${entry.data.status} • ${entry.data.partner ?? 'ACES Technology'}`}
-        />
-      ))}
-    </div>
-  </section>
-</Layout>
+<BaseLayout title="Research — ACES Technology" description="Research areas and technical publications from ACES Technology.">
+  <section class="page-intro"><p class="eyebrow">Research</p><h1>Questions that guide the work</h1><p class="lede">Research translates broad aerospace and defense challenges into architectures that can be reasoned about, built, and tested.</p></section>
+  <section class="research-grid">{areas.map(([n,title,text]) => <article><span>{n}</span><h2>{title}</h2><p>{text}</p></article>)}</section>
+  <section class="callout"><p class="eyebrow">Publications</p><h2>Technical papers and reports are being prepared for release.</h2><p>The initial library will include PURiK system documentation, modularity studies, and engineering program analysis.</p></section>
+</BaseLayout>
