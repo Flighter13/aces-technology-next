@@ -2,6 +2,8 @@
 
 Astro-based research portfolio for ACES Technology. Content is stored directly in Markdown—there is no CMS, admin route, or external database.
 
+See [`CONTENT_GUIDE.md`](CONTENT_GUIDE.md) for the complete project-writing, asset, validation, and publishing workflow.
+
 ## Local development
 
 Requires Node.js 22 or later.
