@@ -8,7 +8,7 @@ const projects = (await getCollection('projects')).filter(({ data }) => data.fea
     <div class="hero-copy">
       <p class="eyebrow">Independent engineering research</p>
       <h1>Building adaptable systems for a world of changing sensors.</h1>
-      <p class="lede">ACES Technology develops modular embedded-system prototypes at the intersection of sensing, autonomy, and open architecture.</p>
+      <p class="lede">ACES Technology develops modular embedded-system testbeds at the intersection of sensing, autonomy, and open architecture—from working sensor nodes to distributed ground-station concepts.</p>
       <div class="actions"><a class="button primary" href="/projects/">Explore the work</a><a class="button" href="/about/">About the researcher</a></div>
     </div>
     <div class="system-map" aria-label="System architecture: sense, connect, understand">
@@ -19,6 +19,12 @@ const projects = (await getCollection('projects')).filter(({ data }) => data.fea
       <div class="map-line"></div>
       <div class="map-node"><span>03</span><strong>Understand</strong><small>Fusion · Interface · Action</small></div>
     </div>
+  </section>
+
+  <section class="evidence-strip" aria-label="Current program evidence">
+    <article><strong>01</strong><span>Operational prototype</span><p>Iteration 1 demonstrated multi-sensor acquisition and a local wireless dashboard.</p></article>
+    <article><strong>02</strong><span>Integration in progress</span><p>Iteration 2 has achieved GNSS fixes and host communication with TI mmWave radar hardware.</p></article>
+    <article><strong>03</strong><span>Architecture-led</span><p>Interfaces, device metadata, power telemetry, and transport are being formalized for repeatable integration.</p></article>
   </section>
 
   <section class="statement">
@@ -37,5 +43,9 @@ const projects = (await getCollection('projects')).filter(({ data }) => data.fea
       </a>)}
       <a class="project-card quiet" href="/research/"><div class="card-top"><span>Research library</span><span>02</span></div><h3>Technical writing & analysis</h3><p>Architecture studies, program analysis, design briefs, and engineering documentation.</p><span class="card-link">Browse research →</span></a>
     </div>
+  </section>
+  <section class="section-block compact">
+    <div class="section-heading"><div><p class="eyebrow">Research infrastructure</p><h2>Platforms built to answer questions</h2></div><a href="/platforms/">Explore platforms →</a></div>
+    <p class="section-lede">UNO Q and UNO R4 compute nodes, radar, LiDAR, GNSS, radio links, power instrumentation, and mobile carriers form a flexible laboratory for integration and autonomy experiments.</p>
   </section>
 </BaseLayout>

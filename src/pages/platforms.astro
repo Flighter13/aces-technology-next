@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const platforms = [
+  { eyebrow: 'Ground station', title: 'UNO Q integration host', status: 'Active integration', text: 'Higher-capability compute for Linux/Python adapters, sensor configuration, analysis, and the operator interface. Current work includes GNSS and TI mmWave connectivity.' },
+  { eyebrow: 'Mobile nodes', title: 'UNO R4 WiFi controllers', status: 'Architecture defined', text: 'Embedded nodes intended to host deterministic drivers, acquire local sensor data, and transport normalized messages to the ground station.' },
+  { eyebrow: 'Radar', title: 'TI IWRL6432BOOST', status: 'CLI communication verified', text: 'A 60 GHz mmWave development platform used to investigate presence, ranging, and target-data integration through its XDS110 USB interfaces.' },
+  { eyebrow: 'Ranging', title: 'Slamtec RPLIDAR A1M8', status: 'Bench verified', text: 'A 360-degree 2D scanning LiDAR available for environmental mapping and later multi-sensor experiments.' },
+  { eyebrow: 'Navigation', title: 'SparkFun MAX-M10S', status: 'Valid fixes demonstrated', text: 'GNSS receiver providing position and platform-state context, including observed satellite, altitude, speed, and heading data.' },
+  { eyebrow: 'Communications', title: 'RF and Wi-Fi links', status: 'Integration planned', text: 'NRF24L01+PA+LNA and Wi-Fi are the planned transports between mobile sensor nodes and the UNO Q ground station.' },
+  { eyebrow: 'Power', title: 'Instrumented power subsystem', status: 'Design development', text: 'USB-C or LiPo-fed distribution with conversion, protection, grounding, and INA260 telemetry treated as a first-class subsystem.' },
+  { eyebrow: 'Vehicle laboratory', title: 'Mobile research carriers', status: 'Available platforms', text: 'RC ground and air vehicles provide progressively demanding environments for packaging, communications, sensing, and autonomy experiments after bench verification.' },
+];
+---
+<BaseLayout title="Research Platforms — ACES Technology" description="Hardware and mobile test platforms supporting ACES Technology research.">
+  <section class="page-intro"><p class="eyebrow">Research infrastructure</p><h1>Platforms for progressive integration.</h1><p class="lede">The laboratory moves from controlled bench tests to distributed nodes and mobile carriers. Each step adds environmental and operational complexity only after the previous interface is understood.</p></section>
+  <section class="platform-grid">{platforms.map(({eyebrow,title,status,text}) => <article><p class="eyebrow">{eyebrow}</p><h2>{title}</h2><p>{text}</p><span class="status-chip">{status}</span></article>)}</section>
+  <section class="callout"><p class="eyebrow">Test philosophy</p><h2>Bench first. Network second. Mobility third.</h2><p>This sequence isolates problems, preserves configuration evidence, and keeps a failed mobile demonstration from obscuring whether the root cause is power, interfaces, software, communications, or the physical platform.</p></section>
+</BaseLayout>

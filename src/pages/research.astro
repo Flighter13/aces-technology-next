@@ -1,14 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const areas = [
-  ['01','Modular open systems','Interfaces and architectures that allow components to change without redesigning the whole system.'],
-  ['02','Embedded sensing','Practical integration of radar, LiDAR, positioning, environmental, and proximity sensors.'],
-  ['03','Autonomy testbeds','Accessible platforms for experimenting with human-machine teaming and autonomous control.'],
-  ['04','Aerospace systems analysis','Technical studies connecting program strategy, production, survivability, and mission systems.'],
+  ['01','Modular open systems','Applying MOSA principles—well-defined interfaces, modular boundaries, and replaceable components—to an accessible experimental sensor architecture.'],
+  ['02','Sensor discovery and adapters','Defining device identity, capability metadata, drivers, and payload adapters so newly attached sensors can be recognized and normalized.'],
+  ['03','Distributed sensing','Separating mobile sensing nodes from ground-station processing while preserving useful data across RF, Wi-Fi, UART, I²C, SPI, and USB links.'],
+  ['04','Power-aware integration','Treating power distribution, conversion, protection, and INA260 telemetry as part of the system architecture rather than an afterthought.'],
+  ['05','Autonomy testbeds','Building accessible physical platforms for later experiments in sensor fusion, human-machine teaming, and autonomous control.'],
+  ['06','Aerospace systems analysis','Connecting prototype lessons to combat-aircraft mission systems, acquisition, production, survivability, and open-architecture strategy.'],
 ];
 ---
 <BaseLayout title="Research — ACES Technology" description="Research areas and technical publications from ACES Technology.">
-  <section class="page-intro"><p class="eyebrow">Research</p><h1>Questions that guide the work</h1><p class="lede">Research translates broad aerospace and defense challenges into architectures that can be reasoned about, built, and tested.</p></section>
+  <section class="page-intro"><p class="eyebrow">Research agenda</p><h1>Questions that guide the work</h1><p class="lede">Research translates broad aerospace and defense challenges into architectures that can be reasoned about, built, instrumented, and tested.</p></section>
   <section class="research-grid">{areas.map(([n,title,text]) => <article><span>{n}</span><h2>{title}</h2><p>{text}</p></article>)}</section>
-  <section class="callout"><p class="eyebrow">Publications</p><h2>Technical papers and reports are being prepared for release.</h2><p>The initial library will include PURiK system documentation, modularity studies, and engineering program analysis.</p></section>
+  <section class="callout"><p class="eyebrow">Standards pathway</p><h2>MOSA is the design discipline; OMS, FACE, and SOSA are reference points.</h2><p>PURiK is not presented as compliant with defense standards. The research instead studies how their ideas—interface control, portable software, hardware profiles, data models, and conformance evidence—can improve a small experimental system.</p></section>
+  <section class="section-block compact"><p class="eyebrow">Documentation program</p><h2>Evidence under development</h2><div class="deliverable-grid"><article><h3>System architecture</h3><p>Functional boundaries, interfaces, data flow, power flow, and deployment views.</p></article><article><h3>Interface control</h3><p>Device identity, physical and logical interfaces, message definitions, and versioning.</p></article><article><h3>Verification record</h3><p>Test procedures, observed results, limitations, configuration, and traceability.</p></article><article><h3>Research papers</h3><p>Technical interpretation of prototype results and their relationship to open-systems practice.</p></article></div></section>
 </BaseLayout>
