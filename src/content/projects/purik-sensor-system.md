@@ -12,6 +12,10 @@ disciplines:
 order: 1
 ---
 
+[Browse the PURiK iteration 2 code repository](https://github.com/Flighter13/purik-sensor-system-iteration-2).
+
+[Explore the related NexGen Air Battlespace research atlas](https://flighter13.github.io/NexGen-Air-Battlespace/research/).
+
 ## Project brief
 
 PURiK explores a practical question: how can heterogeneous sensors be integrated, identified, and presented through a common interface without rebuilding the entire system for each payload?
