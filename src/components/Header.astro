@@ -2,6 +2,8 @@
 const current = Astro.url.pathname;
 const links = [
   ['Work', '/projects/'],
+  ['PURiK', '/projects/purik-sensor-system/'],
+  ['NexGen ↗', 'https://flighter13.github.io/NexGen-Air-Battlespace/research/'],
   ['Research', '/research/'],
   ['Platforms', '/platforms/'],
   ['About', '/about/'],
@@ -15,6 +17,6 @@ const links = [
   </a>
   <button class="mobile-menu-button" type="button" aria-controls="primary-links" aria-expanded="false" onclick="const nav=document.getElementById('primary-links');const open=this.getAttribute('aria-expanded')!=='true';this.setAttribute('aria-expanded',String(open));nav?.classList.toggle('is-open',open)">Menu</button>
   <nav id="primary-links" aria-label="Primary navigation">
-    {links.map(([label, href]) => <a class:list={{ active: current.startsWith(href) }} href={href}>{label}</a>)}
+    {links.map(([label, href]) => <a class:list={{ active: href.startsWith("/") && current.startsWith(href) }} href={href}>{label}</a>)}
   </nav>
 </header>
