@@ -7,8 +7,8 @@ const projects = (await getCollection('projects')).filter(({ data }) => data.fea
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Independent engineering research</p>
-      <h1>Building adaptable systems for a world of changing sensors.</h1>
-      <p class="lede">ACES Technology develops modular embedded-system testbeds at the intersection of sensing, autonomy, and open architecture—from working sensor nodes to distributed ground-station concepts.</p>
+      <h1>Researching the connected aerospace battlespace.</h1>
+      <p class="lede">ACES Technology brings together hands-on modular sensing research through PURiK and interactive air-combat systems analysis through NexGen Air Battlespace. Explore the engineering evidence, published sources, and experiments behind each project.</p>
       <div class="actions"><a class="button primary" href="/projects/">Explore the work</a><a class="button" href="https://flighter13.github.io/NexGen-Air-Battlespace/research/">Launch NexGen ↗</a></div>
     </div>
     <div class="system-map" aria-label="System architecture: sense, connect, understand">
@@ -34,7 +34,7 @@ const projects = (await getCollection('projects')).filter(({ data }) => data.fea
   </section>
 
   <section class="section-block">
-    <div class="section-heading"><div><p class="eyebrow">Featured program</p><h2>Selected work</h2></div><a href="/projects/">View all →</a></div>
+    <div class="section-heading"><div><p class="eyebrow">Featured projects</p><h2>Selected work</h2></div><a href="/projects/">View all →</a></div>
     <div class="project-grid">
       {projects.map(({ id, data }) => <a class="project-card" href={`/projects/${id}/`}>
         <div class="card-top"><span>{data.status}</span><span>{data.year}</span></div>
