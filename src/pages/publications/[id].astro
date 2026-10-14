@@ -1,0 +1,15 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export async function getStaticPaths() {
+ const publications = await getCollection('publications');
+ return publications.map(entry=>({params:{id:entry.id},props:{entry}}));
+}
+const {entry} = Astro.props;
+const {Content} = await render(entry);
+---
+<BaseLayout title={`${entry.data.title} — ACES Technology`} description={entry.data.summary}>
+<section class="page-intro publication-intro"><p class="eyebrow">Publication · {entry.data.year}</p><h1>{entry.data.title}</h1><p class="lede">{entry.data.summary}</p><p class="publication-origin">{entry.data.authors} · {entry.data.origin} · {entry.data.status}</p><div class="publication-actions"><a href="/publications/">← Publications</a>{entry.data.pdf && <a href={entry.data.pdf} target="_blank" rel="noopener noreferrer">View original PDF ↗</a>}</div></section>
+<article class="prose publication-body"><Content /></article>
+<div class="publication-notice"><strong>Scope and limitations:</strong> {entry.data.disclaimer}</div>
+</BaseLayout>

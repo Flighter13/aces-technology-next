@@ -15,4 +15,20 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { projects };
+const publications = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/publications' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    year: z.number(),
+    category: z.enum(['technical', 'research', 'academic', 'concept']),
+    status: z.string(),
+    origin: z.string(),
+    authors: z.string(),
+    order: z.number().default(99),
+    pdf: z.string().startsWith('/publications/').optional(),
+    disclaimer: z.string(),
+  }),
+});
+
+export const collections = { projects, publications };

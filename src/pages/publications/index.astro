@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const entries = (await getCollection('publications')).sort((a,b)=>b.data.year-a.data.year || a.data.order-b.data.order);
+---
+<BaseLayout title="Publications — ACES Technology" description="Original engineering reports, undergraduate research, concept studies, and independent technical publications.">
+<section class="page-intro"><p class="eyebrow">Technical writing & evidence</p><h1>Publications and research reports.</h1><p class="lede">Selected original engineering reports and research summaries, with provenance and development status clearly identified.</p></section>
+<p class="publication-notice">These include academic course reports and draft research documents; they are not represented as peer-reviewed publications. Some source documents remain private, with public summaries provided instead.</p>
+<section class="publication-list">{entries.map(({id,data})=><article class="publication-entry"><div class="publication-meta"><span>{data.year}</span><span>{data.category}</span><span>{data.status}</span></div><div><h2><a href={`/publications/${id}/`}>{data.title}</a></h2><p>{data.summary}</p><p class="publication-origin">{data.origin} · {data.authors}</p><div class="publication-actions"><a href={`/publications/${id}/`}>Read overview →</a>{data.pdf && <a href={data.pdf} target="_blank" rel="noopener noreferrer">View original PDF ↗</a>}</div></div></article>)}</section>
+</BaseLayout>

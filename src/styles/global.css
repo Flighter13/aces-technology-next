@@ -18,3 +18,20 @@
  .site-header nav a{padding:.7rem .5rem;border-bottom:1px solid var(--line);font-size:1rem}
  .site-header nav a:last-child{border-bottom:0}
 }
+
+/* Original engineering publications library */
+.publication-notice{margin:2rem 0;padding:1.3rem 1.5rem;border-left:3px solid #687f83;background:#e9efed;color:#354c58;line-height:1.7}
+.publication-list{margin:3rem 0 6rem}
+.publication-entry{display:grid;grid-template-columns:185px minmax(0,1fr);gap:2.5rem;padding:2.2rem 0;border-bottom:1px solid var(--line)}
+.publication-entry:first-child{border-top:1px solid var(--line)}
+.publication-meta{display:flex;align-items:flex-start;gap:.65rem;flex-wrap:wrap;align-content:flex-start;font:500 .7rem "IBM Plex Mono",monospace;color:#52636e;text-transform:uppercase}
+.publication-meta span{border:1px solid var(--line);padding:.2rem .4rem}
+.publication-entry h2{font-size:clamp(1.45rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.04em;margin:0 0 .9rem}
+.publication-entry h2 a:hover{text-decoration:underline}
+.publication-entry p{max-width:760px;color:#415460}
+.publication-origin{font:400 .76rem "IBM Plex Mono",monospace;color:#60717d!important}
+.publication-actions{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.4rem;font-size:.88rem;font-weight:700}
+.publication-actions a{text-decoration:underline;text-underline-offset:4px}
+.publication-intro h1{font-size:clamp(2.8rem,5.5vw,5.5rem)}
+.publication-body{margin-top:3rem;margin-bottom:3rem}
+@media(max-width:750px){.publication-entry{grid-template-columns:1fr;gap:1rem}.publication-meta{gap:.4rem}.publication-intro{padding:4rem 0 2rem}}
